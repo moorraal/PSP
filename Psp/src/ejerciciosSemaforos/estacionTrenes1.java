@@ -6,6 +6,7 @@ import java.util.Scanner;
 import java.util.concurrent.Semaphore;
 
 public class estacionTrenes1 extends Thread {
+	//N. aleatorio usado para saber a que vía va el tren
     protected int nAle = (int) (Math.random()*3);
     protected int id; // idTrenPasajeros,idTrenCarga
     private static Scanner sc = new Scanner(System.in);
@@ -15,7 +16,8 @@ public class estacionTrenes1 extends Thread {
     private static Semaphore v3 = new Semaphore(1);
     private static int contadorPasajeros = 0;
     private static int contadorCarga = 0;
-    protected int nAleTren = new Random().nextInt(2);
+    
+   
     
 
     public estacionTrenes1(int id) {
@@ -24,7 +26,9 @@ public class estacionTrenes1 extends Thread {
 
     public void run() {
         try {
-             // 0 para carga, 1 para pasajeros
+        	//nAleTren indica el tipo de tren que es dependiendo de 0=Carga y 1=Pasajeros
+            // 0 para carga, 1 para pasajeros
+        	int nAleTren = new Random().nextInt(2);
             String tipoTren;
             estacion.acquire();
             if (nAleTren == 0) {
