@@ -23,15 +23,15 @@ public synchronized void llenarAgua(){
         if(this.agua >= 100) {
         	this.agua=agua+10;
             System.out.println("LLenando agua de 5 en 5 debido a que hay menos de 100 litros de agua: ");
-            notifyAll();// Despertar el siguiente hilo
+            notify();// Despertar el siguiente hilo
         }else if(this.agua==0) {
         this.agua=agua+10;
         System.out.println("LLenando agua de 10 en 10 debido a que hay 0 litros de agua: ");
-        notifyAll();// Despertar el siguiente hilo
+        notify();// Despertar el siguiente hilo
         }else if(this.agua>=900) {
         	 this.agua=agua+10;
              System.out.println("LLenando agua de 10 en 10 debido a que hay 900 litros de agua: ");
-             notifyAll();// Despertar el siguiente hilo
+             notify();// Despertar el siguiente hilo
         }
        
     }
@@ -45,7 +45,7 @@ public synchronized void extraerAgua(){
     if(this.agua>=1000) {
     	this.agua=agua-10;
     	System.out.println("Vaciando agua de 10 en 10 debido a que hay mas de 1000 litros de agua");
-    	notifyAll();
+    	notify();
     /*}else if(this.agua==0) {
     	System.out.println("Vaciando agua de 5 en 5 debido a que hay mas de 900 litros de agua");
     	this.agua=agua+10;
