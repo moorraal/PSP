@@ -1,4 +1,4 @@
-package matias;
+package matiasMonitores;
 public class main {
     public static void main(String[] args) {
         balsas balsa = new balsas();

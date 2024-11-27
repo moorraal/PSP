@@ -1,4 +1,4 @@
-package matias;
+package matiasMonitores;
 public class balsas {
     private String naufrago;
     private int naufragosMontados = 0;
